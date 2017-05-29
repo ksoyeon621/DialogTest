@@ -24,11 +24,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dialog.setTitle("BIGBANG");
         dialog.setIcon(R.drawable.flamingo);
       //  dialog.setMessage("여기는 메세지를 쓰는 곳입니다.");
-        dialog.setItems(itemArr, new DialogInterface.OnClickListener() {
+       /* dialog.setItems(itemArr, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int i) {
                 butDialog.setText(itemArr[i]);
-
+            }
+        });*/
+//        라디오 버튼 목록
+        dialog.setSingleChoiceItems(itemArr, 0,new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                butDialog.setText(itemArr[i]);
             }
         });
         dialog.setPositiveButton("Ok", null/*처리자를 넣는곳*/);
